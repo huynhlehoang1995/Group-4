@@ -1,7 +1,6 @@
 package com.ssense.ssense.CustomAdapter;
 
 import android.content.Context;
-import android.support.v7.widget.ActivityChooserView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,8 @@ import android.widget.TextView;
 import com.ssense.ssense.DataModels.Product;
 import com.ssense.ssense.R;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class ListViewWishListAdapter extends BaseAdapter {
     Context context;
     ArrayList<Product> products;
+    NumberFormat formatter = new DecimalFormat("###.###");
 
     public ListViewWishListAdapter(Context context, ArrayList<Product> products) {
         this.context = context;
@@ -45,11 +47,11 @@ public class ListViewWishListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if (view == null){
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.listview_wishlist_item, viewGroup, false);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
@@ -57,7 +59,7 @@ public class ListViewWishListAdapter extends BaseAdapter {
         viewHolder.productName.setText(product.getName());
         viewHolder.productColor.setText(product.getColor());
         viewHolder.productSize.setText(product.getSize());
-        viewHolder.productPrice.setText(product.getPrice()+"");
+        viewHolder.productPrice.setText(formatCurrency(product.getPrice()));
         viewHolder.imgProduct.setImageResource(R.drawable.hmprod);
 
 
@@ -66,7 +68,7 @@ public class ListViewWishListAdapter extends BaseAdapter {
 
 
     private class ViewHolder {
-        TextView productName,productColor, productSize, productPrice;
+        TextView productName, productColor, productSize, productPrice;
         ImageView imgProduct;
 
         public ViewHolder(View view) {
@@ -77,4 +79,15 @@ public class ListViewWishListAdapter extends BaseAdapter {
             imgProduct = view.findViewById(R.id.imgWishListProduct);
         }
     }
+
+
+    public String formatCurrency(int number) {
+        if (number < 1000 && number >= 0) {
+            return String.valueOf(number);
+        } else {
+            String resp = formatter.format(number);
+            return resp;
+        }
+    }
+
 }

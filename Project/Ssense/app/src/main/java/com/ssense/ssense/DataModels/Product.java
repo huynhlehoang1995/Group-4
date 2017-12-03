@@ -6,10 +6,10 @@ package com.ssense.ssense.DataModels;
 
 public class Product {
     String id, name, description, color, size;
-    double price;
+    int price;
     int quantity;
 
-    public Product(String id, String name, String description, String color, String size, double price, int quantity) {
+    public Product(String id, String name, String description, String color, String size, int price, int quantity) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -59,11 +59,11 @@ public class Product {
         this.size = size;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
