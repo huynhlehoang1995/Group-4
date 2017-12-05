@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pkemon.Page1">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition
+                Height="Auto"/>
+            <RowDefinition
+                Height="Auto"/>
+            <RowDefinition
+                Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition
+                Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image WidthRequest="180"
+               x:Name="image"
+               HeightRequest="180"
+               Grid.Row="0"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"/>
+        <Label Text="Name: "
+               
+               Grid.Row="1"
+                FontAttributes="Bold"
+               FontSize="20"/>
+        <Label Text="Weight: "
+               
+               Grid.Row="2"
+                FontAttributes="Bold"
+               FontSize="20"/>
+        <Label Text="Height: "
+               
+               Grid.Row="3"
+                FontAttributes="Bold"
+               FontSize="20"/>
+        <Label Text="Pikachu "
+               x:Name="name"
+                Grid.Row="1"
+               Grid.Column="1"
+               FontSize="20"/>
+        <Label Text="1.5kg "
+               x:Name="he"
+                 Grid.Row="2"
+               Grid.Column="1"
+               FontSize="20"/>
+        <Label Text="dsfs "
+               x:Name="we"
+                Grid.Row="3"
+               Grid.Column="1"
+               FontSize="20"/>
+        <Label Text="sdfs"
+               x:Name="des"
+               Grid.Row="4"
+               Grid.ColumnSpan="2"
+               FontSize="20"/>
+    </Grid>
+</ContentPage>

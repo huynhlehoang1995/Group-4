@@ -1,0 +1,2 @@
+C:\Users\HP pro 450\Desktop\PokedexNET_Starter-master\PokedexNET_Starter-master\PokedexNET.csproj;neutral
+F:\vinh\Pkemon\Pkemon\Pkemon.UWP\Pkemon.UWP.csproj;x86
