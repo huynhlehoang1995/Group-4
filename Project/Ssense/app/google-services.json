@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "288730457184",
+    "firebase_url": "https://ssense-e8681.firebaseio.com",
+    "project_id": "ssense-e8681",
+    "storage_bucket": "ssense-e8681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288730457184:android:5d5ba983e9fd4678",
+        "android_client_info": {
+          "package_name": "com.ssense.ssense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288730457184-hugur2beh231qu3mga1un186174uhkf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzl_csrQmqCd68N21_jb8gUWX-p2Sv1SE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class ListViewWishListAdapter extends BaseAdapter {
     Context context;
     ArrayList<Product> products;
-    NumberFormat formatter = new DecimalFormat("###.###");
+    NumberFormat formatter = new DecimalFormat("###,###");
 
     public ListViewWishListAdapter(Context context, ArrayList<Product> products) {
         this.context = context;
@@ -81,13 +81,8 @@ public class ListViewWishListAdapter extends BaseAdapter {
     }
 
 
-    public String formatCurrency(int number) {
-        if (number < 1000 && number >= 0) {
-            return String.valueOf(number);
-        } else {
-            String resp = formatter.format(number);
-            return resp;
-        }
+    public String formatCurrency(int price) {
+        return formatter.format(price).replace(",", ".");
     }
 
 }
