@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/h1"
+            android:id="@+id/imageView2"
+            android:layout_weight="1.10" />
+
+        <Button
+            android:text="Start"
+            android:onClick="doStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_start"
+            android:background="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:text="Pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_pause"
+            android:background="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="5dp"
+            android:onClick="doPause"
+            />
+
+        <Button
+            android:text=">>"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_fastForward"
+            android:background="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="5dp"
+            android:onClick="doFastForward"
+            />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="&lt;&lt;"
+            android:id="@+id/button_rewind"
+            android:layout_below="@+id/textView_currentPosion"
+            android:onClick="doRewind"
+            android:background="@android:color/black"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:text="Next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button10"
+            android:background="@android:color/black"
+            android:textColor="@android:color/holo_blue_dark"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="goNext"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="Max Time"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_maxTime"
+            android:gravity="center"
+            android:textColor="@android:color/holo_green_dark"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            />
+
+        <TextView
+            android:text="Current Position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_currentPosion"
+            android:textColor="@android:color/holo_green_dark"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

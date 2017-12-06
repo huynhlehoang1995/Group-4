@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textView_currentPosion" type="id">currentPosion</item>
+    <item name="textView_maxTime" type="id">maxTime</item>
+    <item name="button_start" type="id">start</item>
+    <item name="button_pause" type="id">pause</item>
+    <item name="seekBar" type="id">seeBar</item>
+</resources>

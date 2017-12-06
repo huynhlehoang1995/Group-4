@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            app:srcCompat="@mipmap/h3"
+            android:id="@+id/imageView"
+            android:layout_weight="1.02" />
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="playSound"
+            android:text="Play"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/black"
+            />
+
+        <Button
+            android:id="@+id/playloop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="playLoop"
+            android:text="Play loop"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/black"
+            />
+
+        <Button
+            android:id="@+id/pause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="pauseSound"
+            android:text="Pause"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/black"
+            />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:onClick="stopSound"
+            android:text="Stop"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="@android:color/black"
+            />
+
+        <Button
+            android:text="Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:textColor="@android:color/holo_blue_dark"
+            android:onClick="goBack"
+            android:background="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>
