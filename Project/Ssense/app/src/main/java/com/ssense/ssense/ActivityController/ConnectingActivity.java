@@ -22,16 +22,20 @@ public class ConnectingActivity extends AppCompatActivity {
                         getFragmentManager().beginTransaction().replace(R.id.statusCheck, new ConnectingFragment()).commit();
 
                         Thread.sleep(3000);
+                        boolean checked=true;
+                        if(!checked)
+                            getFragmentManager().beginTransaction().replace(R.id.statusCheck, new FailConnectFragment()).commit();
+                        else {
+                            Intent intent = new Intent(ConnectingActivity.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                            startActivity(intent);
+                        }
 
-                        getFragmentManager().beginTransaction().replace(R.id.statusCheck, new FailConnectFragment()).commit();
+
                     }catch (Exception e){
                         e.printStackTrace();
-                    }finally {
-                        Intent intent = new Intent(ConnectingActivity.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                        startActivity(intent);
                     }
                 }
             };

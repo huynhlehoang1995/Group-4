@@ -23,7 +23,7 @@ import com.ssense.ssense.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Boolean exit = false;
-
+    String user = "User1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,10 +111,10 @@ public class MainActivity extends AppCompatActivity
                 fragment = new CategoryFragment();
                 break;
             case R.id.nav_ladies:
-                fragment = new CustomerSupportFragment();
+                fragment = new CategoryFragment();
                 break;
             case R.id.nav_men:
-                fragment = new MySsenseFragment();
+                fragment = new CategoryFragment();
                 break;
             case R.id.nav_kids:
                 fragment = new CategoryFragment();
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, "magazine", Toast.LENGTH_LONG);
                 break;
             case R.id.nav_wishlist:
-                fragment = new WishListFragment();
+                fragment = new WishListFragment(this.user);
                 break;
             case R.id.nav_my_ssense:
                 fragment = new MySsenseFragment();
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
 
-        if (fragment != null){
+        if (fragment != null) {
             getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
         }
 

@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "288730457184-gdivoim1f2ofrh6v5c4mlkrkvbt0a0us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssense.ssense",
+            "certificate_hash": "c4346f1075e3f7f9503f1e5e74bd1bb2558e57c2"
+          }
+        },
+        {
+          "client_id": "288730457184-2es3i1h3erpbf4vrg9nb8u9grmgrgnt2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssense.ssense",
+            "certificate_hash": "ea1a37cac5f0d6893996aa08d760e3a456e40892"
+          }
+        },
+        {
+          "client_id": "288730457184-4e7adesk32bcmueamhft4e7p78c1u7sa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssense.ssense",
+            "certificate_hash": "c09628bb385cd74e3664b4bb8c54d9b2b9925c88"
+          }
+        },
+        {
           "client_id": "288730457184-hugur2beh231qu3mga1un186174uhkf4.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +53,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288730457184-hugur2beh231qu3mga1un186174uhkf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

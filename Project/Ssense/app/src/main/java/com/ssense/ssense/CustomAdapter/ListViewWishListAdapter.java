@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ssense.ssense.DataModels.Product;
+import com.ssense.ssense.DataModels.WishListProduct;
 import com.ssense.ssense.R;
 
 import java.text.DecimalFormat;
@@ -21,10 +22,10 @@ import java.util.ArrayList;
 
 public class ListViewWishListAdapter extends BaseAdapter {
     Context context;
-    ArrayList<Product> products;
+    ArrayList<WishListProduct> products;
     NumberFormat formatter = new DecimalFormat("###,###");
 
-    public ListViewWishListAdapter(Context context, ArrayList<Product> products) {
+    public ListViewWishListAdapter(Context context, ArrayList<WishListProduct> products) {
         this.context = context;
         this.products = products;
     }
@@ -55,11 +56,11 @@ public class ListViewWishListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        Product product = (Product) getItem(i);
+        WishListProduct product = (WishListProduct) getItem(i);
         viewHolder.productName.setText(product.getName());
-        viewHolder.productColor.setText(product.getColor());
+        viewHolder.productColor.setText(product.getMau());
         viewHolder.productSize.setText(product.getSize());
-        viewHolder.productPrice.setText(formatCurrency(product.getPrice()));
+        viewHolder.productPrice.setText(formatCurrency(product.getGia()));
         viewHolder.imgProduct.setImageResource(R.drawable.hmprod);
 
 
