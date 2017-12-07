@@ -1,6 +1,7 @@
-package com.example.yiile.manhinhchinh;
+package com.ssense.ssense.ActivityController;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.ssense.ssense.ActivityController.SanPham;
+import com.ssense.ssense.R;
 
 import java.util.ArrayList;
 
@@ -50,13 +53,18 @@ public class CustomAdapter extends BaseAdapter {
         ImageView imageView = (ImageView) views.findViewById(R.id.picture);
         TextView textName = (TextView) views.findViewById(R.id.txtName);
         TextView textGia = (TextView) views.findViewById(R.id.txtGia);
+        TextView textGiaCu = (TextView) views.findViewById(R.id.txtGiaCu);
         TextView textDeal = (TextView) views.findViewById(R.id.txtDeal);
-//
-//        imageView.setImageResource(sp.getHinh());
 
-         Picasso.with(context).load(sp.getHinh()).into(imageView);
+        Log.d("deal", sp.getDeal().toString());
+        Log.d("giamoi", sp.getGia().toString());
+        Float giaCu  = (sp.getGia() * 1) / (1- (sp.getDeal()/100));
+
+        Log.d("giacu", giaCu.toString());
+        Picasso.with(context).load(sp.getHinh()).into(imageView);
         textName.setText(sp.getName());
         textGia.setText(sp.getGia().toString());
+        textGiaCu.setText(giaCu.toString());
         textDeal.setText(sp.getDeal().toString());
         return views;
     }
