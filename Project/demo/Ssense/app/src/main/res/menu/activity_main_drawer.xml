@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_ssense_logo_v2"
+            android:title="Products" />
+        <item
+            android:id="@+id/nav_ladies"
+            android:title="Ladies" />
+        <item
+            android:id="@+id/nav_men"
+            android:title="Men" />
+        <item
+            android:id="@+id/nav_kids"
+            android:title="Kids" />
+
+    </group>
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@drawable/icons8_shopping_bag_filled_50"
+            android:title="Wish list" />
+        <item
+            android:id="@+id/nav_my_ssense"
+            android:icon="@drawable/icons8_customer_filled_50"
+            android:title="My Ssense" />
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/icons8_help_50"
+            android:title="Log In" />
+        <item
+        android:id="@+id/logout"
+        android:icon="@drawable/icons8_group_message_filled_50"
+        android:title="Logout" />
+        <item
+            android:id="@+id/lichsu"
+            android:icon="@drawable/icons8_group_message_filled_50"
+            android:title="History" />
+
+    </group>
+
+    <!--
+    <item
+        android:checkableBehavior="single"
+        android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_magazine"
+                android:icon="@drawable/icons8_magazine_filled_50"
+                android:title="Magazine" />
+            <item
+                android:id="@+id/nav_wishlist"
+                android:icon="@drawable/icons8_shopping_bag_filled_50"
+                android:title="Wish list" />
+            <item
+                android:id="@+id/nav_my_ssense"
+                android:icon="@drawable/icons8_customer_filled_50"
+                android:title="My Ssense" />
+            <item
+                android:id="@+id/nav_support"
+                android:icon="@drawable/icons8_help_50"
+                android:title="Support" />
+            <item
+                android:id="@+id/nav_find_store"
+                android:icon="@drawable/icons8_geo_fence_filled_50"
+                android:title="Find a store" />
+            <item
+                android:id="@+id/nav_newsletter"
+                android:icon="@drawable/icons8_group_message_filled_50"
+                android:title="Newsletter" />
+        </menu>
+    </item>-->
+
+</menu>
