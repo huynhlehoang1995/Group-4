@@ -14,4 +14,15 @@
 
     <string name="action_settings">Settings</string>
     <string name="cart_tittle">Cart</string>
+
+    <string name="spmoi">Sản phẩm nổi bật</string>
+    <string name="giamgia">Giảm giá nhiều nhất</string>
+    <string name="nhom4">Nhóm 4 - Lập trình di động 3</string>
+    <string name="footer2">Copyright © 2017-2018 Bản quyền thuộc về Nhóm 4</string>
+
+    <string name="tenmathang">Tên mặt hàng :</string>
+    <string name="gia">Giá :</string>
+    <string name="giacu">Giá trước đây :</string>
+    <string name="gia_deal">Giảm giá :</string>
+    <string name="phantran">%</string>
 </resources>

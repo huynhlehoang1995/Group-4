@@ -1,4 +1,4 @@
-package com.example.yiile.manhinhchinh;
+package com.ssense.ssense.ActivityController;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.ssense.ssense.R;
 
 import java.util.ArrayList;
 
