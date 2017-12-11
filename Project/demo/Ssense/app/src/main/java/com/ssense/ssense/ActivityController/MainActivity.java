@@ -12,22 +12,52 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.ssense.ssense.CustomAdapter.CustomAdapter;
+import com.ssense.ssense.DataModels.SanPham;
 import com.ssense.ssense.FragmentController.MySsenseFragment;
 import com.ssense.ssense.FragmentController.ProductsFragment;
 import com.ssense.ssense.FragmentController.WishListFragment;
 import com.ssense.ssense.FragmentController.lichsufragment;
+import com.ssense.ssense.FragmentController.manhinhchinhFragment;
 import com.ssense.ssense.R;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Boolean exit = false;
     Bundle bundle = new Bundle();
     FirebaseAuth auth;
+
+    DatabaseReference mData;
+    private ViewFlipper mViewFlipper;
+    private GestureDetector mGestureDetector;
+    Animation in, out;
+    ImageView imageNoibat1, imageNoibat2, imageNoibat3, imageNoibat4;
+    TextView tenNoibat1, tenNoibat2, tenNoibat3, tenNoibat4;
+    TextView giaNoibat1, giaNoibat2, giaNoibat3, giaNoibat4;
+    ArrayList<SanPham> arr = new ArrayList<>();
+    ArrayList<SanPham> arr4 = new ArrayList<>();
+    CustomAdapter customAdapter;
+    ListView list;
+    int[] resources = {
+            R.mipmap.image_1,
+            R.mipmap.image_2,
+            R.mipmap.image_3,
+
+    };
 
 
     @Override
@@ -120,10 +150,10 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         switch (id) {
             case R.id.nav_products:
-                bundle.putString("danh muc", "Nam");
 
-                fragment = new ProductsFragment();
-                fragment.setArguments(bundle);
+
+                fragment = new manhinhchinhFragment();
+
                 break;
             case R.id.nav_ladies:
 

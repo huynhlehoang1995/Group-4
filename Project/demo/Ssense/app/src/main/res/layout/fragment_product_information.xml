@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@android:color/background_light">
     <TextView
-        android:textColor="@color/colorWhite"
+
         android:id="@+id/tenSP"
         android:text="aaaaaaaa"
         android:textSize="25dp"
@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:background="@color/strokeButton"/>
+        android:textColor="@color/colorWhite"
+        android:background="@color/red"/>
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="330dp"
             android:layout_alignParentRight="true"
-            android:background="@android:color/darker_gray">
+            android:background="@color/red">
             <TextView
                 android:layout_margin="5dp"
                 android:id="@+id/gia"
@@ -84,7 +85,7 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:gravity="right"
-        android:background="@color/strokeButton"
+        android:background="@color/red"
         >
 
         <Spinner
