@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -72,6 +73,8 @@ public class manhinhchinhFragment extends Fragment {
         list.setAdapter(customAdapter);
 
 
+
+       // mData = FirebaseDatabase.getInstance().getReference();
         mData = FirebaseDatabase.getInstance().getReference();
         mData.child("sanpham").child("Nam").addChildEventListener(new ChildEventListener() {
             @Override
@@ -86,6 +89,17 @@ public class manhinhchinhFragment extends Fragment {
                     tenNoibat1.setText(name1);
                     String gia1 = Float.toString(arr.get(1).gia);
                     giaNoibat1.setText(gia1 + " VND");
+                    imageNoibat1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle =new Bundle();
+                            bundle.putString("danhmuc", "Nam");
+                            bundle.putString("name", tenNoibat1.getText().toString());
+                            ProductInformationFragment fragment = new ProductInformationFragment();
+                            fragment.setArguments(bundle);
+                            getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
+                        }
+                    });
 //                    Sản phẩm nổi bật 2
                     String pic2 = arr.get(4).hinh2;
                     Picasso.with(getActivity()).load(pic2).into(imageNoibat2);
@@ -93,6 +107,17 @@ public class manhinhchinhFragment extends Fragment {
                     tenNoibat2.setText(name2);
                     String gia2 = Float.toString(arr.get(4).gia);
                     giaNoibat2.setText(gia2 + " VND");
+                    imageNoibat2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle =new Bundle();
+                            bundle.putString("danhmuc", "Nam");
+                            bundle.putString("name", tenNoibat2.getText().toString());
+                            ProductInformationFragment fragment = new ProductInformationFragment();
+                            fragment.setArguments(bundle);
+                            getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
+                        }
+                    });
                     //                    Sản phẩm nổi bật 3
                     String pic3 = arr.get(0).hinh;
                     Picasso.with(getActivity()).load(pic3).into(imageNoibat3);
@@ -100,6 +125,17 @@ public class manhinhchinhFragment extends Fragment {
                     tenNoibat3.setText(name3);
                     String gia3 = Float.toString(arr.get(3).gia);
                     giaNoibat3.setText(gia3 + " VND");
+                    imageNoibat3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle =new Bundle();
+                            bundle.putString("danhmuc", "Nam");
+                            bundle.putString("name", tenNoibat3.getText().toString());
+                            ProductInformationFragment fragment = new ProductInformationFragment();
+                            fragment.setArguments(bundle);
+                            getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
+                        }
+                    });
 //                    Sản phẩm nổi bật 4
                     String pic4 = arr.get(2).hinh2;
                     Picasso.with(getActivity()).load(pic4).into(imageNoibat4);
@@ -107,6 +143,17 @@ public class manhinhchinhFragment extends Fragment {
                     tenNoibat4.setText(name4);
                     String gia4 = Float.toString(arr.get(2).gia);
                     giaNoibat4.setText(gia4 + " VND");
+                    imageNoibat4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Bundle bundle =new Bundle();
+                            bundle.putString("danhmuc", "Nam");
+                            bundle.putString("name", tenNoibat4.getText().toString());
+                            ProductInformationFragment fragment = new ProductInformationFragment();
+                            fragment.setArguments(bundle);
+                            getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
+                        }
+                    });
 
                 }
                 //Sắp xếp mảng
@@ -135,6 +182,7 @@ public class manhinhchinhFragment extends Fragment {
                 customAdapter.notifyDataSetChanged();
 
 
+
             }
 
             @Override
@@ -159,9 +207,22 @@ public class manhinhchinhFragment extends Fragment {
 
             }
         });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle =new Bundle();
+                bundle.putString("danhmuc", "Nam");
+                bundle.putString("name", ((SanPham)list.getItemAtPosition(position)).getName());
+                ProductInformationFragment fragment = new ProductInformationFragment();
+                fragment.setArguments(bundle);
+                getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentMain, fragment).commit();
+
+            }
+        });
 
 
-        // Get the ViewFlipper
+
+
         mViewFlipper = (ViewFlipper) view.findViewById(R.id.viewflip);
         int[] resources = {
                 R.mipmap.image_1,
@@ -193,6 +254,12 @@ public class manhinhchinhFragment extends Fragment {
 
     }
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
 
     class CustomGestureDetector extends GestureDetector.SimpleOnGestureListener {
         @Override
@@ -231,7 +298,7 @@ public class manhinhchinhFragment extends Fragment {
         }
     }
 
-//    @Override
+//        @Override
 //    public boolean onTouchEvent(MotionEvent event) {
 //        mGestureDetector.onTouchEvent(event);
 //

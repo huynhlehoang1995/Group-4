@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Boolean exit = false;
     Bundle bundle = new Bundle();
-    FirebaseAuth auth;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     DatabaseReference mData;
     private ViewFlipper mViewFlipper;
@@ -190,6 +190,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.logout:
                 auth.signOut();
+                fragment = new manhinhchinhFragment();
                 break;
             case R.id.lichsu:
                 fragment = new lichsufragment();

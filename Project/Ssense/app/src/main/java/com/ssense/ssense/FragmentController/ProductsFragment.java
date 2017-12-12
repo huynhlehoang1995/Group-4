@@ -29,7 +29,7 @@ public class ProductsFragment extends Fragment {
     GridView grid;
     GridViewProductsAdapter adapter;
     ArrayList<SanPham> arr =  new ArrayList<>();
-    TextView button,tim;
+    TextView button,tim,title;
     EditText key;
 
 
@@ -44,9 +44,12 @@ public class ProductsFragment extends Fragment {
         button = view.findViewById(R.id.btnSort);
         tim = view.findViewById(R.id.btnFilter);
         key = view.findViewById(R.id.key);
+        title = view.findViewById(R.id.txvTittle);
+
         adapter = new GridViewProductsAdapter(getActivity().getBaseContext(), arr);
         grid.setAdapter(adapter);
         data = FirebaseDatabase.getInstance().getReference();
+        title.setText(strtext);
         data.child("sanpham").child(strtext).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {

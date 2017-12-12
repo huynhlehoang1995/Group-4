@@ -111,6 +111,15 @@ public class SanPham implements Comparable<SanPham>{
     public String ngaydang;
     public String size,size1,size2;
     public String hinh,hinh1,hinh2;
+    public String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public SanPham() {
     }
